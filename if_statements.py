@@ -16,14 +16,14 @@ if should_continue:
 def who_do_you_know():
     #Ask a user for a list of people they know
     people_string = input('Enter a list of people you know, separated by commas: ')
-    user_list = people_string.split(',') 
-    print(user_list)
-    users_without_spaces = []
-    for user in user_list:
-        users_without_spaces.append(user.strip())
+    normalized_users = [person.strip().lower() for person in people_string.split(',')]
+    # user_list = people_string.split(',') 
+    # print(user_list)
+    # for user in user_list:
+    #     users_without_spaces.append(user.strip())
     #Split the input into a list
-    print(users_without_spaces)
-    return users_without_spaces
+    print(normalized_users)
+    return normalized_users
     #Return the list
 
 def ask_user():
